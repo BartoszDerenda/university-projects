@@ -1,0 +1,70 @@
+@import url('/static/palette.css');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    display: flex;
+
+    background-color: var(--secondary-background);
+
+    .navbar-link {
+        padding: 25px;
+
+        color: black;
+
+        transition: 0.1s;
+        text-decoration: none;
+    }
+
+    .navbar-link:hover {
+        background-color: var(--main-hover);
+        color: lightyellow;
+    }
+
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 25px;
+
+    background-color: var(--main-background);
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+
+    padding: 25px;
+
+    background-color: var(--secondary-background);
+}
+
+.sprawca {
+    background-color: var(--sprawca);
+}
+
+.zdarzenie {
+    background-color: var(--zdarzenie);
+}
+
+.obiekt {
+    background-color: var(--obiekt);
+}
+
+.narzedzie {
+    background-color: var(--narzedzie);
+}
+
+.miejsce {
+    background-color: var(--miejsce);
+}
+
+.cel {
+    background-color: var(--cel);
+}

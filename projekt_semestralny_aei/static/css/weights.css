@@ -1,0 +1,64 @@
+@import url('/static/palette.css');
+
+#weights {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    padding-top: 25px;
+
+    font-size: 1.2em;
+
+}
+
+tr:nth-child(even) {
+    background-color: var(--main-file-background);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--secondary-file-background);
+}
+
+.weight-row {
+    display: flex;
+    padding: 10px 5px;
+
+}
+
+#names-box {
+    display: flex;
+    width: 50%;
+
+    > .weight-names {
+
+    }
+}
+
+#value-box {
+    display: flex;
+
+    min-width: 25%;
+    padding-left: 20px;
+
+    > .weight-value {
+
+    }
+}
+
+/* I'd like to thank ChatGPT which spared me from writing a script that
+would generate this silly thing. */
+.row-1:hover, .row-2:hover, .row-3:hover, .row-4:hover, .row-5:hover,
+.row-6:hover, .row-7:hover, .row-8:hover, .row-9:hover, .row-10:hover,
+.row-11:hover, .row-12:hover, .row-13:hover, .row-14:hover, .row-15:hover,
+.row-16:hover, .row-17:hover, .row-18:hover, .row-19:hover, .row-20:hover,
+.row-21:hover, .row-22:hover, .row-23:hover, .row-24:hover, .row-25:hover,
+.row-26:hover, .row-27:hover, .row-28:hover, .row-29:hover, .row-30:hover,
+.row-31:hover, .row-32:hover, .row-33:hover, .row-34:hover, .row-35:hover,
+.row-36:hover, .row-37:hover, .row-38:hover, .row-39:hover, .row-40:hover,
+.row-41:hover, .row-42:hover, .row-43:hover, .row-44:hover, .row-45:hover,
+.row-46:hover, .row-47:hover, .row-48:hover, .row-49:hover, .row-50:hover,
+.row-51:hover, .row-52:hover, .row-53:hover, .row-54:hover, .row-55:hover,
+.row-56:hover, .row-57:hover, .row-58:hover, .row-59:hover, .row-60:hover,
+.row-61:hover, .row-62:hover, .row-63:hover {
+    background-color: #1ac096;
+}

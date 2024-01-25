@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+    {% block head %}
+        <title>Strona główna</title>
+    {% endblock %}
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/static/css/homepage.css" type="text/css"/>
+    {% endblock %}
+
+    {% block scripts %}
+        <script>
+            $(document).ready(function() {
+                $('.sort-by-match-ascending').click(function() {
+                    $('#match-sort-ascending').css({
+                        'display': 'inline'
+                    });
+                    $('#filename-sort-descending').css({
+                        'display': 'none'
+                    });
+                    $('#filename-sort-ascending').css({
+                        'display': 'none'
+                    });
+                    $('#match-sort-descending').css({
+                        'display': 'none'
+                    });
+                });
+
+                $('.sort-by-match-descending').click(function() {
+                    $('#match-sort-descending').css({
+                        'display': 'inline'
+                    });
+                    $('#filename-sort-descending').css({
+                        'display': 'none'
+                    });
+                    $('#filename-sort-ascending').css({
+                        'display': 'none'
+                    });
+                    $('#match-sort-ascending').css({
+                        'display': 'none'
+                    });
+                });
+
+                $('.sort-by-filename-ascending').click(function() {
+                    $('#filename-sort-ascending').css({
+                        'display': 'inline'
+                    });
+                    $('#filename-sort-descending').css({
+                        'display': 'none'
+                    });
+                    $('#match-sort-ascending').css({
+                        'display': 'none'
+                    });
+                    $('#match-sort-descending').css({
+                        'display': 'none'
+                    });
+                });
+
+                $('.sort-by-filename-descending').click(function() {
+                    $('#filename-sort-descending').css({
+                        'display': 'inline'
+                    });
+                    $('#match-sort-ascending').css({
+                        'display': 'none'
+                    });
+                    $('#filename-sort-ascending').css({
+                        'display': 'none'
+                    });
+                    $('#match-sort-descending').css({
+                        'display': 'none'
+                    });
+                });
+            });
+        </script>
+    {% endblock %}
+
+    {% block content %}
+
+        <div id="sort-button-box">
+            <div>
+                <div class="sort-button sort-button-left sort-by-match-ascending">^</div>
+                <p class="sort-title">Sort by match</p>
+                <div class="sort-button sort-button-right sort-by-match-descending">v</div>
+            </div>
+            <div>
+                <div class="sort-button sort-button-left sort-by-filename-ascending">^</div>
+                <p class="sort-title">Sort by filename</p>
+                <div class="sort-button sort-button-right sort-by-filename-descending">v</div>
+            </div>
+        </div>
+
+        <div id="match-sort-ascending">
+        {% for filename, text_rating_counts in output.items()|sort(attribute='1.1') %}
+            <div class="file">
+                <h3 class="filename">{{ filename }}.txt</h3>
+                <p class="text">{{ text_rating_counts[0]|safe }}</p>
+                {% for type, set in text_rating_counts[2].items() %}
+                    {% if set %}
+                        <p class="count"><span class="{{ type }}">{{ type }}</span>
+                        {% for item in set %}
+                            {% if not loop.last %}
+                                {{ item }},
+                            {% else %}
+                                {{ item }}
+                            {% endif %}
+                        {% endfor %}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+                <p class="rating">Match {{ text_rating_counts[1] }}%</p>
+            </div>
+        {% endfor %}
+        </div>
+
+        <div id="match-sort-descending">
+        {% for filename, text_rating_counts in output.items()|sort(attribute='1.1', reverse = True) %}
+            <div class="file">
+                <h3 class="filename">{{ filename }}.txt</h3>
+                <p class="text">{{ text_rating_counts[0]|safe }}</p>
+                {% for type, set in text_rating_counts[2].items() %}
+                    {% if set %}
+                        <p class="count"><span class="{{ type }}">{{ type }}</span>
+                        {% for item in set %}
+                            {% if not loop.last %}
+                                {{ item }},
+                            {% else %}
+                                {{ item }}
+                            {% endif %}
+                        {% endfor %}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+                <p class="rating">Match {{ text_rating_counts[1] }}%</p>
+            </div>
+        {% endfor %}
+        </div>
+
+        <div id="filename-sort-ascending">
+        {% for filename, text_rating_counts in output.items()|sort(attribute='0') %}
+            <div class="file">
+                <h3 class="filename">{{ filename }}.txt</h3>
+                <p class="text">{{ text_rating_counts[0]|safe }}</p>
+                {% for type, set in text_rating_counts[2].items() %}
+                    {% if set %}
+                        <p class="count"><span class="{{ type }}">{{ type }}</span>
+                        {% for item in set %}
+                            {% if not loop.last %}
+                                {{ item }},
+                            {% else %}
+                                {{ item }}
+                            {% endif %}
+                        {% endfor %}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+                <p class="rating">Match {{ text_rating_counts[1] }}%</p>
+            </div>
+        {% endfor %}
+        </div>
+
+        <div id="filename-sort-descending">
+        {% for filename, text_rating_counts in output.items()|sort(attribute='0')|reverse %}
+            <div class="file">
+                <h3 class="filename">{{ filename }}.txt</h3>
+                <p class="text">{{ text_rating_counts[0]|safe }}</p>
+                {% for type, set in text_rating_counts[2].items() %}
+                    {% if set %}
+                        <p class="count"><span class="{{ type }}">{{ type }}</span>
+                        {% for item in set %}
+                            {% if not loop.last %}
+                                {{ item }},
+                            {% else %}
+                                {{ item }}
+                            {% endif %}
+                        {% endfor %}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+                <p class="rating">Match {{ text_rating_counts[1] }}%</p>
+            </div>
+        {% endfor %}
+        </div>
+    {% endblock %}

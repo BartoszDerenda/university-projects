@@ -1,0 +1,15 @@
+:root {
+    --main-background: #a3dde1;
+    --secondary-background: #5ba1a4;
+    --main-file-background: #77cfd3;
+    --secondary-file-background: #59bec2;
+
+    --main-hover: #6dc4c7;
+
+    --sprawca: #e71f1f;
+    --zdarzenie: #bf90e8;
+    --obiekt: #00c451;
+    --narzedzie: #00a6a6;
+    --miejsce: #ff9e7b;
+    --cel: #ffd92d;
+}

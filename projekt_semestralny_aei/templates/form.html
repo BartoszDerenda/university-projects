@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+    {% block head %}
+        <title>Formularz</title>
+    {% endblock %}
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/static/css/form.css" type="text/css"/>
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
+
+    {% block content %}
+        <h2>Lista frekwencyjna</h2>
+        <div id="frequency-lists">
+            <p><span class="sprawca">Sprawca:</span>
+            {% for item in sprawca_list %}
+                {{ item }},
+            {% endfor %}
+            </p>
+            <p><span class="narzedzie">Narzędzie:</span>
+            {% for item in narzedzie_list %}
+                {{ item }},
+            {% endfor %}
+            </p>
+            <p><span class="cel">Cel:</span>
+            {% for item in cel_list %}
+                {{ item }},
+            {% endfor %}
+            </p>
+            <p><span class="zdarzenie">Zdarzenie:</span>
+            {% for item in zdarzenie_list %}
+                {{ item }},
+            {% endfor %}
+            </p>
+            <p><span class="obiekt">Obiekt:</span>
+            {% for item in obiekt_list %}
+                {{ item }},
+            {% endfor %}
+            </p>
+            <p><span class="miejsce">Miejsce:</span>
+            {% for item in miejsce_list %}
+                {{ item }},
+            {% endfor %}
+            </p>
+        </div>
+    {% endblock %}

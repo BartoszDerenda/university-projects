@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+    {% block head %}
+        <title>Strona główna</title>
+    {% endblock %}
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/static/css/frequency_list.css" type="text/css"/>
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
+
+    {% block content %}
+        <h2>Lista frekwencyjna</h2>
+        <div id="frequency-list">
+            <p><span class="obiekt">Obiekt:</span>
+            {% for item in obiekt_list %}
+                {% if not loop.last %}
+                    {{ item }},
+                {% else %}
+                    {{ item }}
+                {% endif %}
+            {% endfor %}
+            </p>
+            <p><span class="narzedzie">Narzędzie:</span>
+            {% for item in narzedzie_list %}
+                {% if not loop.last %}
+                    {{ item }},
+                {% else %}
+                    {{ item }}
+                {% endif %}
+            {% endfor %}
+            </p>
+            <p><span class="miejsce">Miejsce:</span>
+            {% for item in miejsce_list %}
+                {% if not loop.last %}
+                    {{ item }},
+                {% else %}
+                    {{ item }}
+                {% endif %}
+            {% endfor %}
+            </p>
+            <p><span class="sprawca">Sprawca:</span>
+            {% for item in sprawca_list %}
+                {% if not loop.last %}
+                    {{ item }},
+                {% else %}
+                    {{ item }}
+                {% endif %}
+            {% endfor %}
+            </p>
+            <p><span class="cel">Cel:</span>
+            {% for item in cel_list %}
+                {% if not loop.last %}
+                    {{ item }},
+                {% else %}
+                    {{ item }}
+                {% endif %}
+            {% endfor %}
+            </p>
+            <p><span class="zdarzenie">Zdarzenie:</span>
+            {% for item in zdarzenie_list %}
+                {% if not loop.last %}
+                    {{ item }},
+                {% else %}
+                    {{ item }}
+                {% endif %}
+            {% endfor %}
+            </p>
+        </div>
+    {% endblock %}

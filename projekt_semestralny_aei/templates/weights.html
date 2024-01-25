@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+    {% block head %}
+        <title>Wagi</title>
+    {% endblock %}
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/static/css/weights.css" type="text/css"/>
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
+
+    {% block content %}
+        <h2>Wagi</h2>
+        <table id="weights">
+            {% for item, value in weights.items() %}
+                {% if not loop.first %}
+                    <tr class="weight-row row-{{ loop.index }}">
+                        <td id="names-box">
+                            <span class="weight-names">
+                            {% for name in item %}
+                                {{ name }}
+                                {% if not loop.last %}
+                                    +
+                                {% endif %}
+                            {% endfor %}
+                            </span>
+                        </td>
+                        <td id="value-box">
+                            <span class="weight-value">{{ value }}</span>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    {% endblock %}

@@ -1,0 +1,11 @@
+@import url('/static/palette.css');
+
+#frequency-lists {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    padding-top: 25px;
+    height: 100vh;
+    font-size: 1.2em;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projekt</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% block head %}
+    {% endblock %}
+
+    <link rel="stylesheet" href="/static/base.css" type="text/css"/>
+    {% block stylesheets %}
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
+
+</head>
+<body>
+    <div id="navbar">
+        <a href="{{ url_for('homepage') }}" class="navbar-link">Strona główna</a>
+        <a href="{{ url_for('frequency_list') }}" class="navbar-link">Lista frekwencyjna</a>
+        <a href="{{ url_for('weights') }}" class="navbar-link">Wagi</a>
+    </div>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        <p>Bartosz Derenda</p>
+    </div>
+</body>
+</html>

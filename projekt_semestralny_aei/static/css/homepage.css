@@ -1,0 +1,77 @@
+@import url('/static/palette.css');
+
+.file {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--main-file-background);
+
+    margin-top: 25px;
+    padding: 10px 15px;
+
+    > * {
+        padding-top: 10px;
+    }
+
+    > .filename {
+        padding: 10px;
+        background-color: var(--secondary-file-background);
+    }
+
+    > .text {
+        padding: 10px;
+    }
+
+    > .rating {
+        padding: 10px;
+        margin-top: 15px;
+        background-color: var(--secondary-file-background);
+    }
+}
+
+#sort-button-box {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+
+    column-gap: 10px;
+
+    > div {
+        display: flex;
+        column-gap: 2px;
+    }
+}
+
+.sort-button-left {
+    border-radius: 15px 0 0 15px;
+}
+
+.sort-button-right {
+    border-radius: 0 15px 15px 0;
+}
+
+.sort-button {
+    background-color: #5ba1a4;
+    padding: 25px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.sort-button:hover {
+    background-color: #6dc4c7;
+    color: lightyellow;
+}
+
+.sort-title {
+    background-color: #5ba1a4;
+    padding: 25px;
+}
+
+#match-sort-descending {
+    display: inline;
+}
+
+#filename-sort-ascending, #match-sort-ascending, #filename-sort-descending {
+    display: none;
+}
